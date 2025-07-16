@@ -23,7 +23,7 @@ export const LOADING_TEXTS = [
 ] as const;
 
 export const API_ENDPOINTS = {
-  OPENAI_PROXY: '/api/openai-proxy'
+  OPENAI_PROXY: 'http://localhost:3003/api/openai-proxy'
 } as const;
 
 export const RECIPE_PROMPT_TEMPLATE = `Сгенерируй {mealType}, которое можно приготовить в домашних условиях. Ответ должен содержать:
