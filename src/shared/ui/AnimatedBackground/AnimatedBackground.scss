@@ -1,0 +1,401 @@
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -9999;
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 25%, #6D28D9 50%, #5B21B6 75%, #4C1D95 100%);
+  pointer-events: none;
+  isolation: isolate;
+  contain: layout style paint;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.7) 20%, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.1) 50%, transparent 80%);
+  backdrop-filter: none;
+  animation: float 20s infinite linear;
+  filter: blur(2px) saturate(1.5);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  z-index: -9998;
+  will-change: transform, opacity;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);
+  mask-image: radial-gradient(circle, black 60%, transparent 100%);
+}
+
+/* Разные радиусы круговых траекторий для каждого круга */
+.circle-1 { --radius: 150px; animation-name: float1; }
+.circle-2 { --radius: 120px; animation-name: float2; }
+.circle-3 { --radius: 180px; animation-name: float3; }
+.circle-4 { --radius: 100px; animation-name: float4; }
+.circle-5 { --radius: 80px; animation-name: float5; }
+.circle-6 { --radius: 200px; animation-name: float6; }
+.circle-7 { --radius: 160px; animation-name: float7; }
+.circle-8 { --radius: 140px; animation-name: float8; }
+
+.circle-1 {
+  width: 2800px;
+  height: 2800px;
+  top: -1200px;
+  left: -1000px;
+  animation-delay: 0s;
+  animation-duration: 12s;
+  will-change: transform;
+}
+
+.circle-2 {
+  width: 2700px;
+  height: 2700px;
+  top: -1000px;
+  right: -900px;
+  animation-delay: 0s;
+  animation-duration: 12s;
+  will-change: transform;
+}
+
+.circle-3 {
+  width: 2900px;
+  height: 2900px;
+  bottom: -1200px;
+  left: -1000px;
+  animation-delay: 0s;
+  animation-duration: 12s;
+  will-change: transform;
+}
+
+.circle-4 {
+  width: 3000px;
+  height: 3000px;
+  bottom: -1300px;
+  right: -1100px;
+  animation-delay: 0s;
+  animation-duration: 12s;
+  will-change: transform;
+}
+
+.circle-5 {
+  width: 2600px;
+  height: 2600px;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  animation-delay: 0s;
+  animation-duration: 12s;
+  will-change: transform;
+}
+
+.circle-6 {
+  width: 2400px;
+  height: 2400px;
+  top: 25vh;
+  left: 25vw;
+  animation-delay: 0s;
+  animation-duration: 12s;
+  will-change: transform;
+}
+
+.circle-7 {
+  width: 2500px;
+  height: 2500px;
+  top: 75vh;
+  right: 20vw;
+  animation-delay: 0s;
+  animation-duration: 12s;
+  will-change: transform;
+}
+
+.circle-8 {
+  width: 2300px;
+  height: 2300px;
+  bottom: 25vh;
+  left: 30vw;
+  animation-delay: 0s;
+  animation-duration: 12s;
+  will-change: transform;
+}
+
+
+
+@keyframes float1 {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+    filter: hue-rotate(0deg) saturate(1.5);
+  }
+  25% {
+    transform: translate(300px, -300px);
+    opacity: 0.5;
+    filter: hue-rotate(90deg) saturate(1.5);
+  }
+  50% {
+    transform: translate(600px, 0);
+    opacity: 0.15;
+    filter: hue-rotate(180deg) saturate(1.5);
+  }
+  75% {
+    transform: translate(300px, 300px);
+    opacity: 0.5;
+    filter: hue-rotate(270deg) saturate(1.5);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+    filter: hue-rotate(360deg) saturate(1.5);
+  }
+}
+
+@keyframes float2 {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+    filter: hue-rotate(0deg) saturate(1.5);
+  }
+  25% {
+    transform: translate(-300px, -300px);
+    opacity: 0.5;
+    filter: hue-rotate(90deg) saturate(1.5);
+  }
+  50% {
+    transform: translate(-600px, 0);
+    opacity: 0.15;
+    filter: hue-rotate(180deg) saturate(1.5);
+  }
+  75% {
+    transform: translate(-300px, 300px);
+    opacity: 0.5;
+    filter: hue-rotate(270deg) saturate(1.5);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+    filter: hue-rotate(360deg) saturate(1.5);
+  }
+}
+
+@keyframes float3 {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+    filter: hue-rotate(0deg) saturate(1.5);
+  }
+  25% {
+    transform: translate(300px, 300px);
+    opacity: 0.5;
+    filter: hue-rotate(90deg) saturate(1.5);
+  }
+  50% {
+    transform: translate(0, 600px);
+    opacity: 0.15;
+    filter: hue-rotate(180deg) saturate(1.5);
+  }
+  75% {
+    transform: translate(-300px, 300px);
+    opacity: 0.5;
+    filter: hue-rotate(270deg) saturate(1.5);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+    filter: hue-rotate(360deg) saturate(1.5);
+  }
+}
+
+@keyframes float4 {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+    filter: hue-rotate(0deg) saturate(1.5);
+  }
+  25% {
+    transform: translate(-300px, 300px);
+    opacity: 0.5;
+    filter: hue-rotate(90deg) saturate(1.5);
+  }
+  50% {
+    transform: translate(0, 600px);
+    opacity: 0.15;
+    filter: hue-rotate(180deg) saturate(1.5);
+  }
+  75% {
+    transform: translate(300px, 300px);
+    opacity: 0.5;
+    filter: hue-rotate(270deg) saturate(1.5);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+    filter: hue-rotate(360deg) saturate(1.5);
+  }
+}
+
+@keyframes float5 {
+  0% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    filter: hue-rotate(0deg) saturate(1.5);
+  }
+  25% {
+    transform: translate(-50%, -50%) translate(400px, -400px);
+    opacity: 0.5;
+    filter: hue-rotate(90deg) saturate(1.5);
+  }
+  50% {
+    transform: translate(-50%, -50%) translate(0, -800px);
+    opacity: 0.15;
+    filter: hue-rotate(180deg) saturate(1.5);
+  }
+  75% {
+    transform: translate(-50%, -50%) translate(-400px, -400px);
+    opacity: 0.5;
+    filter: hue-rotate(270deg) saturate(1.5);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    filter: hue-rotate(360deg) saturate(1.5);
+  }
+}
+
+@keyframes float6 {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+    filter: hue-rotate(0deg) saturate(1.5);
+  }
+  25% {
+    transform: translate(500px, -500px);
+    opacity: 0.5;
+    filter: hue-rotate(90deg) saturate(1.5);
+  }
+  50% {
+    transform: translate(1000px, 0);
+    opacity: 0.15;
+    filter: hue-rotate(180deg) saturate(1.5);
+  }
+  75% {
+    transform: translate(500px, 500px);
+    opacity: 0.5;
+    filter: hue-rotate(270deg) saturate(1.5);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+    filter: hue-rotate(360deg) saturate(1.5);
+  }
+}
+
+@keyframes float7 {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+    filter: hue-rotate(0deg) saturate(1.5);
+  }
+  25% {
+    transform: translate(-500px, -500px);
+    opacity: 0.5;
+    filter: hue-rotate(90deg) saturate(1.5);
+  }
+  50% {
+    transform: translate(-1000px, 0);
+    opacity: 0.15;
+    filter: hue-rotate(180deg) saturate(1.5);
+  }
+  75% {
+    transform: translate(-500px, 500px);
+    opacity: 0.5;
+    filter: hue-rotate(270deg) saturate(1.5);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+    filter: hue-rotate(360deg) saturate(1.5);
+  }
+}
+
+@keyframes float8 {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+    filter: hue-rotate(0deg) saturate(1.5);
+  }
+  25% {
+    transform: translate(400px, 400px);
+    opacity: 0.5;
+    filter: hue-rotate(90deg) saturate(1.5);
+  }
+  50% {
+    transform: translate(0, 800px);
+    opacity: 0.15;
+    filter: hue-rotate(180deg) saturate(1.5);
+  }
+  75% {
+    transform: translate(-400px, 400px);
+    opacity: 0.5;
+    filter: hue-rotate(270deg) saturate(1.5);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+    filter: hue-rotate(360deg) saturate(1.5);
+  }
+}
+
+
+
+// Убираем внутренний элемент пульсации для устранения контуров
+
+// Медиа-запросы для адаптивности
+@media (max-width: 768px) {
+  .floating-circle {
+    animation-duration: 20s;
+  }
+  
+  .circle-1 {
+    width: 1400px;
+    height: 1400px;
+  }
+  
+  .circle-2 {
+    width: 1350px;
+    height: 1350px;
+  }
+  
+  .circle-3 {
+    width: 1450px;
+    height: 1450px;
+  }
+  
+  .circle-4 {
+    width: 1500px;
+    height: 1500px;
+  }
+  
+  .circle-5 {
+    width: 1300px;
+    height: 1300px;
+  }
+  
+  .circle-6 {
+    width: 1200px;
+    height: 1200px;
+  }
+  
+  .circle-7 {
+    width: 1250px;
+    height: 1250px;
+  }
+  
+  .circle-8 {
+    width: 1150px;
+    height: 1150px;
+  }
+} 

@@ -1,0 +1,1 @@
+export { default as squirrel } from './squirrel.png'; 
